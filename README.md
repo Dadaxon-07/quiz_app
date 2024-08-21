@@ -1,16 +1,7 @@
 # quiz_app
+<h2>Splash page</h2>
+![image](https://github.com/user-attachments/assets/f1405174-30e2-44ec-932f-22d20b8c3af6)
+![image](https://github.com/user-attachments/assets/c54bb6c4-6cc5-4415-a8d5-f4466e6ee368)
+![image](https://github.com/user-attachments/assets/f158c689-7def-4316-ba29-f42a9a190ca9)
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

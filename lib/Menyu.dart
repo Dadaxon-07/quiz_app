@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/Modal/quiz_date.dart';
 import 'package:quiz_app/data/Biologiya_quiz_repository.dart';
+import 'package:quiz_app/data/Inglish_quiz_repository.dart';
+import 'package:quiz_app/data/Matematika_quiz_repository.dart';
+
 import 'package:quiz_app/pages/quiz_page.dart';
 
 class Menyu extends StatefulWidget {
@@ -15,6 +18,9 @@ class Menyu extends StatefulWidget {
 
 class _MenyuState extends State<Menyu> {
   List<QuizData> biologyTest = BiologiyaQuizRepository.biologiyaTest();
+  List<QuizData> matemm = MatematikaQuizRepository.matemtest();
+  List<QuizData> english = InglishQuizRepository.englishtest();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,19 +41,16 @@ class _MenyuState extends State<Menyu> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(top: 40, left: 20),
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 65, 92, 253),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Icon(
-                          CupertinoIcons.rectangle_grid_2x2_fill,
-                          color: Colors.white,
-                        ),
+                    Container(
+                      margin: EdgeInsets.only(top: 40, left: 20),
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 65, 92, 253),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Icon(
+                        CupertinoIcons.rectangle_grid_2x2_fill,
+                        color: Colors.white,
                       ),
                     ),
                     Container(
@@ -88,43 +91,54 @@ class _MenyuState extends State<Menyu> {
               ],
             ),
           ),
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 19,
+          ),
           InkWell(
-            onTap: (){
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => QuizPage(quizList: biologyTest, quizName: "Biologiya"),
+                  builder: (context) =>
+                      QuizPage(quizList: biologyTest, quizName: "Biologiya"),
                 ),
               );
             },
-            child: subjectquiz(
-              name: "Biologiya",
-              img: "image/bilology.png"
-            ),
+            child: subjectquiz(name: "Biologiya", img: "image/bilology.png"),
           ),
-          subjectquiz(
-            name: "Matematika",
-            img: "image/math.png"
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      QuizPage(quizList: matemm, quizName: "Matematika")
+                ),
+              );
+            },
+            child: subjectquiz(name: "Matematika", img: "image/math.png"),
           ),
-          subjectquiz(
-              name: "Biologiya",
-              img: "image/bilology.png"
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      QuizPage(quizList: english, quizName: "English"),
+                ),
+              );
+            },
+            child: subjectquiz(name: "English tili", img: "image/english.png"),
           ),
-          subjectquiz(
-              name: "Matematika",
-              img: "image/math.png"
-          ),
-          subjectquiz(
-              name: "Biologiya",
-              img: "image/bilology.png"
-          ),
+          subjectquiz(name: "Ona tili", img: "image/onatili.png"),
+          subjectquiz(name: "Biologiya", img: "image/bilology.png"),
         ]),
       ),
     );
   }
-  Widget subjectquiz({img , name}){
-    return  Padding(
+
+  Widget subjectquiz({img, name}) {
+    return Padding(
       padding: EdgeInsets.only(left: 30, right: 30),
       child: Container(
         padding: EdgeInsets.all(16.0),
@@ -155,7 +169,7 @@ class _MenyuState extends State<Menyu> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                   name,
+                    name,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -175,7 +189,7 @@ class _MenyuState extends State<Menyu> {
             Container(
               width: 50,
               height: 50,
-              child:  Center(
+              child: Center(
                 child: Text(
                   '10',
                   style: TextStyle(
@@ -189,6 +203,5 @@ class _MenyuState extends State<Menyu> {
         ),
       ),
     );
-}
-
+  }
 }

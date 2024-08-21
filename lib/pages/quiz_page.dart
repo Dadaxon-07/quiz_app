@@ -12,9 +12,8 @@ class QuizPage extends StatefulWidget {
   final List<QuizData> quizList;
   final String quizName;
   const QuizPage({
-    super.key,
-    required this.quizList,
-    required this.quizName,
+    super.key, required this.quizList, required this.quizName,
+
   });
 
   @override
@@ -27,7 +26,7 @@ class _QuizPageState extends State<QuizPage> {
   final int duration = 10;
   int currentQuestionIndex = 0;
   String selectedVariant = "";
-  List choseAnswers=[];
+  List<bool> choseAnswers = [];
   int trueQuestionCount = 0;
   @override
   Widget build(BuildContext context) {
@@ -68,7 +67,9 @@ class _QuizPageState extends State<QuizPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(width: 70,)
+              SizedBox(
+                width: 70,
+              )
             ],
           ),
         ),
@@ -78,7 +79,7 @@ class _QuizPageState extends State<QuizPage> {
             image: DecorationImage(
                 image: AssetImage("image/bilo.png"), fit: BoxFit.cover)),
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
           child: Center(
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
@@ -114,18 +115,25 @@ class _QuizPageState extends State<QuizPage> {
                                             color: Colors.white54)
                                       ],
                                       borderRadius: BorderRadius.circular(26)),
-                                      child: Row(
-                                        children: [
-                                          Expanded(child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(26),
-                                              color: Colors.orange
-                                            ),
-                                          ), flex: expendedvalue,),
-                                          Expanded(flex: widget.quizList.length-expendedvalue, child: SizedBox(), )
-                                        ],
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(26),
+                                              color: Colors.orange),
+                                        ),
+                                        flex: expendedvalue,
                                       ),
-                                    )),
+                                      Expanded(
+                                        flex: widget.quizList.length -
+                                            expendedvalue,
+                                        child: SizedBox(),
+                                      )
+                                    ],
+                                  ),
+                                )),
                                 SizedBox(
                                   width: 8,
                                 ),
@@ -154,7 +162,7 @@ class _QuizPageState extends State<QuizPage> {
                             isReverse: true,
                             strokeWidth: 6,
                             onComplete: () {
-                              if(currentQuestionIndex<9){
+                              if (currentQuestionIndex < 9) {
                                 setState(() {
                                   choseAnswers.add(false);
                                   expendedvalue++;
@@ -181,7 +189,7 @@ class _QuizPageState extends State<QuizPage> {
                         color: Colors.blue),
                   ),
                   SizedBox(
-                    height: 20,
+                      height: 10,
                   ),
                   Text(
                     widget.quizList[currentQuestionIndex].quzitext,
@@ -236,41 +244,51 @@ class _QuizPageState extends State<QuizPage> {
                       },
                       variant: widget.quizList[currentQuestionIndex].v4),
                   SizedBox(
-                    height: 75,
+                    height: 29,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           _controller.restart();
                           setState(() {
-                            if(selectedVariant!=""){
-                              if(currentQuestionIndex+1<widget.quizList.length){
-                                if(selectedVariant==widget.quizList[currentQuestionIndex].trueAnswer){
+                            if (selectedVariant != "") {
+                              if (currentQuestionIndex + 1 <
+                                  widget.quizList.length) {
+                                if (selectedVariant ==
+                                    widget.quizList[currentQuestionIndex]
+                                        .trueAnswer) {
                                   choseAnswers.add(true);
-                                  trueQuestionCount+=1;
-                                }
-                                else{
+                                  trueQuestionCount += 1;
+                                } else {
                                   choseAnswers.add(false);
                                 }
                                 currentQuestionIndex++;
                                 expendedvalue++;
                                 selectedVariant = "";
-
-                              }
-                              else if(currentQuestionIndex+1==widget.quizList.length){
-                                if(selectedVariant==widget.quizList[currentQuestionIndex].trueAnswer){
+                              } else if (currentQuestionIndex + 1 ==
+                                  widget.quizList.length) {
+                                if (selectedVariant ==
+                                    widget.quizList[currentQuestionIndex]
+                                        .trueAnswer) {
                                   choseAnswers.add(true);
-                                  trueQuestionCount+=1;
-                                }
-                                else{
+                                  trueQuestionCount += 1;
+                                } else {
                                   choseAnswers.add(false);
                                 }
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context){
-                                  return ResultPage();
+                                Navigator.pushReplacement(context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) {
+                                  return ResultPage(
+                                      totalQuestionCount:
+                                          widget.quizList.length,
+                                      trueQuestionCount: trueQuestionCount,
+                                      answer: choseAnswers,
+                                      pracent: trueQuestionCount /
+                                          widget.quizList.length *
+                                          100);
                                 }));
-
                               }
                             }
                           });
@@ -278,13 +296,26 @@ class _QuizPageState extends State<QuizPage> {
                         child: Container(
                           height: 55,
                           width: 90,
-                          decoration: BoxDecoration(color:  Color.fromARGB(255,
-                              117, 216, 214),borderRadius: BorderRadius.circular(18)),
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 117, 216, 214),
+                              borderRadius: BorderRadius.circular(18)),
                           child: Row(
                             children: [
-                              SizedBox(width: 13,),
-                              Text("Next", style: GoogleFonts.akatab(fontSize: 19, color: Colors.blue, fontWeight: FontWeight.bold),),
-                              Icon(Icons.navigate_next_outlined, size: 34, color: Colors.blue,)
+                              SizedBox(
+                                width: 13,
+                              ),
+                              Text(
+                                "Next",
+                                style: GoogleFonts.akatab(
+                                    fontSize: 19,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Icon(
+                                Icons.navigate_next_outlined,
+                                size: 34,
+                                color: Colors.blue,
+                              )
                             ],
                           ),
                         ),
@@ -297,7 +328,6 @@ class _QuizPageState extends State<QuizPage> {
           ),
         ),
       ),
-
     );
   }
 }

@@ -25,6 +25,7 @@ class _MenyuState extends State<Menyu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:   Color.fromARGB(255, 40, 32, 105),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 40, 32, 105),
         elevation: 0,
@@ -71,59 +72,62 @@ class _MenyuState extends State<Menyu> {
           ),
         ),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              darkBlue,
-              Color.fromARGB(255, 40, 32, 105),
-            ],
+      body: ListView(
+        children:[ Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                darkBlue,
+                Color.fromARGB(255, 40, 32, 105),
+              ],
+            ),
           ),
-        ),
-        child: Column(children: [
-          SizedBox(
-            height: 19,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      QuizPage(quizList: biologyTest, quizName: "Biologiya"),
-                ),
-              );
-            },
-            child: subjectquiz(name: "Biologiya", img: "image/bilology.png"),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
+          child: Column(children: [
+            SizedBox(
+              height: 19,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
                     builder: (context) =>
-                        QuizPage(quizList: matemm, quizName: "Matematika")),
-              );
-            },
-            child: subjectquiz(name: "Matematika", img: "image/math.png"),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      QuizPage(quizList: english, quizName: "English"),
-                ),
-              );
-            },
-            child: subjectquiz(name: "English tili", img: "image/english.png"),
-          ),
-          subjectquiz(name: "Ona tili", img: "image/onatili.png"),
-          subjectquiz(name: "Biologiya", img: "image/bilology.png"),
-        ]),
+                        QuizPage(quizList: biologyTest, quizName: "Biologiya"),
+                  ),
+                );
+              },
+              child: subjectquiz(name: "Biologiya", img: "image/bilology.png"),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          QuizPage(quizList: matemm, quizName: "Matematika")),
+                );
+              },
+              child: subjectquiz(name: "Matematika", img: "image/math.png"),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        QuizPage(quizList: english, quizName: "English"),
+                  ),
+                );
+              },
+              child: subjectquiz(name: "English tili", img: "image/english.png"),
+            ),
+            subjectquiz(name: "Ona tili", img: "image/onatili.png"),
+            subjectquiz(name: "Biologiya", img: "image/bilology.png"),
+          ]),
+        ),
+          ]
       ),
     );
   }

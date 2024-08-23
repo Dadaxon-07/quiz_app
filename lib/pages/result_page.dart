@@ -25,17 +25,15 @@ class ResultPage extends StatefulWidget {
 class _ResultPageState extends State<ResultPage> {
   String lottie = "";
 
-   @override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    if(widget.pracent>80){
+    if (widget.pracent > 80) {
       lottie = "image/lottie/winner.json";
-    }
-    else if (widget.pracent >=60 && widget.pracent<80){
+    } else if (widget.pracent >= 60 && widget.pracent < 80) {
       lottie = "image/lottie/good.json";
-    }
-    else{
+    } else {
       lottie = "image/lottie/bad.json";
     }
   }
@@ -49,37 +47,84 @@ class _ResultPageState extends State<ResultPage> {
           children: [
             Text(
               "Quiz",
-              style: GoogleFonts.aclonica(
-                  color: Colors.white60, fontSize: 23),
+              style: GoogleFonts.aclonica(color: Colors.white60, fontSize: 23),
             ),
             Text(
               "App",
-              style: GoogleFonts.aclonica(
-                  color: Colors.orange[300], fontSize: 23),
+              style:
+                  GoogleFonts.aclonica(color: Colors.orange[300], fontSize: 23),
             ),
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 26, 33, 61),
       body: SafeArea(
           child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 40, 32, 105),
+              Color.fromARGB(255, 47, 38, 121),
+            ],
+          ),
+        ),
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            Center(child: Lottie.asset(lottie, height: 320, width: 320, fit: BoxFit.cover)),
-            SizedBox(height: 30,),
-            Text("Congratulations !", style: GoogleFonts.afacad(color: Colors.white, fontSize: 35, ),),
-            SizedBox(height: 15,),
-            Text("You Score : ${widget.pracent}", style: TextStyle(color: Colors.white70, fontSize: 20, ),),
-            SizedBox(height: 40,),
-            Center(child: InkWell(onTap: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Menyu()
-                ),
-              );
-            }, child: Container(height: 55, width: 55, decoration: BoxDecoration(color: Colors.white30, shape: BoxShape.circle, border: Border.all(width: 1, color: Colors.white38)),child: Center(child: Icon(CupertinoIcons.xmark),),)),)
+            Center(
+                child: Lottie.asset(lottie,
+                    height: 320, width: 320, fit: BoxFit.cover)),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              "Congratulations !",
+              style: GoogleFonts.afacad(
+                color: Colors.white,
+                fontSize: 35,
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              "You Score : ${widget.pracent}",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Center(
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Menyu()),
+                    );
+                  },
+                  child: Container(
+                    height: 55,
+                    width: 55,
+                    decoration: BoxDecoration(
+                        color: Colors.white24,
+                        shape: BoxShape.circle,
+                        border: Border.all(width: 1, color: Colors.white38),    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blue.withOpacity(0.2),
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(0, 3),
+                      ),
+                    ],),
+                    child: Center(
+                      child: Icon(CupertinoIcons.xmark),
+                    ),
+                  )),
+            )
           ],
         ),
       )),

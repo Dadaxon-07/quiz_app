@@ -12,11 +12,11 @@
 
 <h2>Menu page</h2>
 
-![image](https://github.com/user-attachments/assets/39ca4249-98c5-4991-8d5d-e638ab6eb5ea)
+![image](https://github.com/user-attachments/assets/7a97f35c-d993-4022-91e9-620ad6ce2e9f)
 
 <h2>Questions page</h2>
 
-![image](https://github.com/user-attachments/assets/65a60620-3240-4fc4-bd3e-a3d05958e91c)
+![image](https://github.com/user-attachments/assets/8c438749-e6b0-4a83-a927-2485d668e4f9)
 
 <h2>Result page</h2>
 

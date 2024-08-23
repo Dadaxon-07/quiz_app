@@ -46,13 +46,14 @@ class _ResultPageState extends State<ResultPage> {
         title: Row(
           children: [
             Text(
-              "Quiz",
-              style: GoogleFonts.aclonica(color: Colors.white60, fontSize: 23),
+              "Subject ",
+              style:
+              TextStyle(fontFamily: "Quiz", color: Colors.white60, fontSize: 23),
             ),
             Text(
-              "App",
+              "Quiz",
               style:
-                  GoogleFonts.aclonica(color: Colors.orange[300], fontSize: 23),
+                  TextStyle(fontFamily: "Quiz", color: Colors.orange, fontSize: 23),
             ),
           ],
         ),
@@ -80,10 +81,7 @@ class _ResultPageState extends State<ResultPage> {
             ),
             Text(
               "Congratulations !",
-              style: GoogleFonts.afacad(
-                color: Colors.white,
-                fontSize: 35,
-              ),
+              style: TextStyle(fontFamily: "Quiz1", fontSize: 36, color: Colors.white)
             ),
             SizedBox(
               height: 15,
@@ -93,6 +91,7 @@ class _ResultPageState extends State<ResultPage> {
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: 20,
+                fontFamily: "Quiz"
               ),
             ),
             SizedBox(

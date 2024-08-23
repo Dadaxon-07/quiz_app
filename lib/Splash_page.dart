@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/Intro_page.dart';
 class SplashPage extends StatefulWidget {
   static final String id = 'splash_page';
@@ -32,14 +31,13 @@ class _SplashPageState extends State<SplashPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Quiz",
-                style: GoogleFonts.aclonica(
-                    color: Colors.white, fontSize: 40),
+                "Subject",
+                style: TextStyle(fontFamily: "Quiz", color: Colors.white, fontSize: 40)
               ),
+              SizedBox(width: 10,),
               Text(
-                "App",
-                style: GoogleFonts.aclonica(
-                    color: Colors.orange, fontSize: 40),
+                  "Quiz",
+                  style: TextStyle(fontFamily: "Quiz", color: Colors.orange, fontSize: 40)
               ),
             ],
           ),

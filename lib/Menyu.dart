@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/Modal/quiz_date.dart';
 import 'package:quiz_app/data/Biologiya_quiz_repository.dart';
 import 'package:quiz_app/data/Inglish_quiz_repository.dart';
 import 'package:quiz_app/data/Matematika_quiz_repository.dart';
 
 import 'package:quiz_app/pages/quiz_page.dart';
+
+import 'cons/color.dart';
 
 class Menyu extends StatefulWidget {
   static final String id = 'menyu';
@@ -24,73 +25,64 @@ class _MenyuState extends State<Menyu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(children: [
-          Container(
-            height: 120,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 53, 75, 221),
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(33),
-                  bottomRight: Radius.circular(33)),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 40, left: 20),
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 65, 92, 253),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Icon(
-                        CupertinoIcons.rectangle_grid_2x2_fill,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 43),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Quiz",
-                            style: GoogleFonts.aclonica(
-                                color: Colors.white, fontSize: 23),
-                          ),
-                          Text(
-                            "App",
-                            style: GoogleFonts.aclonica(
-                                color: Colors.orange, fontSize: 23),
-                          ),
-                        ],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(top: 40, right: 30),
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 65, 92, 253),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Icon(
-                          Icons.notifications,
-                          color: Colors.white,
-                          size: 26,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 40, 32, 105),
+        elevation: 0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 40, 32, 105),
+                Color.fromARGB(255, 40, 32, 105),
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(20),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10,
+                offset: Offset(0, 4),
+              ),
+            ],
           ),
+        ),
+        title: Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.quiz, color: Colors.orange),
+              SizedBox(width: 8),
+              Text(
+                'QuizApp',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                width: 70,
+              )
+            ],
+          ),
+        ),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              darkBlue,
+              Color.fromARGB(255, 40, 32, 105),
+            ],
+          ),
+        ),
+        child: Column(children: [
           SizedBox(
             height: 19,
           ),
@@ -111,9 +103,8 @@ class _MenyuState extends State<Menyu> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      QuizPage(quizList: matemm, quizName: "Matematika")
-                ),
+                    builder: (context) =>
+                        QuizPage(quizList: matemm, quizName: "Matematika")),
               );
             },
             child: subjectquiz(name: "Matematika", img: "image/math.png"),
@@ -144,7 +135,17 @@ class _MenyuState extends State<Menyu> {
         padding: EdgeInsets.all(16.0),
         margin: EdgeInsets.only(bottom: 12.0),
         decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              darkBlue,
+              Color.fromARGB(255, 40, 32, 105),
+            ],
+          ),
+          border: Border.all(
+            color: Colors.blue,
+          ),
           borderRadius: BorderRadius.circular(12.0),
           boxShadow: [
             BoxShadow(
@@ -172,6 +173,7 @@ class _MenyuState extends State<Menyu> {
                     name,
                     style: TextStyle(
                       fontSize: 20,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -180,7 +182,7 @@ class _MenyuState extends State<Menyu> {
                     '10 Questions',
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.grey,
+                      color: Colors.orange,
                     ),
                   ),
                 ],
@@ -194,6 +196,7 @@ class _MenyuState extends State<Menyu> {
                   '10',
                   style: TextStyle(
                     fontSize: 20,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

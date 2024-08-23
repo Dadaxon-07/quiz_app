@@ -31,13 +31,14 @@ class _QuizPageState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 40, 32, 105),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 173, 232, 230),
+        backgroundColor:Color.fromARGB(255, 40, 32, 105),
         elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.teal, Colors.blueAccent],
+              colors: [Color.fromARGB(255, 40, 32, 105), Color.fromARGB(255, 40, 32, 105),],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -57,7 +58,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.quiz, color: Colors.white),
+              Icon(Icons.quiz, color: Colors.orange),
               SizedBox(width: 8),
               Text(
                 'QuizApp',
@@ -75,9 +76,7 @@ class _QuizPageState extends State<QuizPage> {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("image/bilo.png"), fit: BoxFit.cover)),
+
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Center(
@@ -98,7 +97,7 @@ class _QuizPageState extends State<QuizPage> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             height: 50,
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey.shade400),
+                                border: Border.all(color: Colors.blue, width: 1.5),
                                 borderRadius: BorderRadius.circular(26)),
                             child: Row(
                               children: [
@@ -108,11 +107,7 @@ class _QuizPageState extends State<QuizPage> {
                                   decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 3, 160, 166),
                                       boxShadow: [
-                                        BoxShadow(
-                                            spreadRadius: 4,
-                                            blurRadius: 4,
-                                            offset: Offset(1, 4),
-                                            color: Colors.white54)
+
                                       ],
                                       borderRadius: BorderRadius.circular(26)),
                                   child: Row(
@@ -139,7 +134,7 @@ class _QuizPageState extends State<QuizPage> {
                                 ),
                                 Text(
                                   "$expendedvalue/${widget.quizList.length}",
-                                  style: TextStyle(fontWeight: FontWeight.w700),
+                                  style: TextStyle(fontWeight: FontWeight.w900, color: Colors.blue),
                                 )
                               ],
                             ),
@@ -294,15 +289,15 @@ class _QuizPageState extends State<QuizPage> {
                           });
                         },
                         child: Container(
-                          height: 55,
-                          width: 90,
+                          height: 54,
+                          width: 92,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 117, 216, 214),
-                              borderRadius: BorderRadius.circular(18)),
+                              color:  Color.fromARGB(255, 40, 32, 105),
+                              borderRadius: BorderRadius.circular(18),border: Border.all(width: 2, color: Colors.blue)),
                           child: Row(
                             children: [
                               SizedBox(
-                                width: 13,
+                                width: 12,
                               ),
                               Text(
                                 "Next",

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'Menyu.dart';
 import 'cons/color.dart';
@@ -46,18 +45,17 @@ class _LoginscreenState extends State<Loginscreen> {
               ),
                SizedBox(height: 3,),
                Row(
-                children: [
-                  Text(
-                    "Quiz",
-                    style: GoogleFonts.aclonica(
-                        color: Colors.white, fontSize: 35),
-                  ),
-                  Text(
-                    "App",
-                    style: GoogleFonts.aclonica(
-                        color: Colors.orange, fontSize: 35),
-                  ),
-                ],
+                 children: [
+                   Text(
+                       "Subject",
+                       style: TextStyle(fontFamily: "Quiz", color: Colors.white, fontSize: 34,)
+                   ),
+                   SizedBox(width: 10,),
+                   Text(
+                       "Quiz",
+                       style: TextStyle(fontFamily: "Quiz", color: Colors.orange, fontSize: 34)
+                   ),
+                 ],
               ),
               const SizedBox(height: 20),
               const Text(

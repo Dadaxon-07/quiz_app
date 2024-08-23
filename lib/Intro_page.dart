@@ -23,19 +23,19 @@ class _IntroPageState extends State<IntroPage> {
             controller: _controller,
             children: [
               buildPage(
-                color: Color(0xFF2D5FFF),
+                color: Color.fromARGB(255, 45, 95, 255),
                 image: 'image/book.png', // Replace with your asset
                 title: "Test run",
                 subtitle: "A set of different tests",
               ),
               buildPage(
-                color: Color(0xFF2D5FFF),
+                color: Color.fromARGB(255, 45, 95, 255),
                 image: 'image/question.png', // Replace with your asset
                 title: "Join the community",
                 subtitle: "Compete with others, share your scores",
               ),
               buildPage(
-                color: Color(0xFF2D5FFF),
+                color: Color.fromARGB(255, 45, 95, 255),
                 image: 'image/worried.png', // Replace with your asset
                 title: "Check the leaderboard",
                 subtitle: "See where you rank among others",

@@ -12,7 +12,8 @@
 
 <h2>Menu page</h2>
 
-![image](https://github.com/user-attachments/assets/7a97f35c-d993-4022-91e9-620ad6ce2e9f)
+![image](https://github.com/user-attachments/assets/ea4eea86-ccd3-4b47-a9ed-0e60dea2b392)
+
 
 <h2>Questions page</h2>
 

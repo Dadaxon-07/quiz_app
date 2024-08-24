@@ -34,7 +34,7 @@ class MatematikaQuizRepository {
         trueAnswer: "D"));
     //4
     data.add(QuizData(
-        quzitext: " 72 + 48 = ?",
+        quzitext: "72 + 48 = ?",
         v1: "A. 120",
         v2: "B. 121",
         v3: "C. 123",
@@ -50,7 +50,7 @@ class MatematikaQuizRepository {
         trueAnswer: "B"));
     //6
     data.add(QuizData(
-        quzitext: " 50 × 6 = ?",
+        quzitext: "50 × 6 = ?",
         v1: "A. 300",
         v2: "B. 230",
         v3: "C. 340",
@@ -59,11 +59,11 @@ class MatematikaQuizRepository {
     //7
     data.add(QuizData(
 
-        quzitext: "50 × 6 = ??",
-        v1: "A. 400",
-        v2: "B. 300",
-        v3: "C. 330",
-        v4: "D. 600",
+        quzitext: "100 × 10 = ??",
+        v1: "A. 10",
+        v2: "B. 100",
+        v3: "C. 1",
+        v4: "D. 10",
         trueAnswer: "B"));
     //8
     data.add(QuizData(
@@ -88,7 +88,7 @@ class MatematikaQuizRepository {
     data.add(QuizData(
 
       //1
-        quzitext: ": 64 ÷ 8 = ?",
+        quzitext: "64 ÷ 8 = ?",
         v1: "A. 8",
         v2: "B. 16",
         v3: "C. 11",

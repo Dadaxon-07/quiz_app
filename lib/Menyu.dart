@@ -4,6 +4,7 @@ import 'package:quiz_app/Modal/quiz_date.dart';
 import 'package:quiz_app/data/Biologiya_quiz_repository.dart';
 import 'package:quiz_app/data/Inglish_quiz_repository.dart';
 import 'package:quiz_app/data/Matematika_quiz_repository.dart';
+import 'package:quiz_app/data/Onatili.dart';
 
 import 'package:quiz_app/pages/quiz_page.dart';
 
@@ -21,11 +22,12 @@ class _MenyuState extends State<Menyu> {
   List<QuizData> biologyTest = BiologiyaQuizRepository.biologiyaTest();
   List<QuizData> matemm = MatematikaQuizRepository.matemtest();
   List<QuizData> english = InglishQuizRepository.englishtest();
+  List<QuizData> onatili = OnatiliRepository.onatest();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:   Color.fromARGB(255, 40, 32, 105),
+      backgroundColor: Color.fromARGB(255, 40, 32, 105),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 40, 32, 105),
         elevation: 0,
@@ -72,8 +74,8 @@ class _MenyuState extends State<Menyu> {
           ),
         ),
       ),
-      body: ListView(
-        children:[ Container(
+      body: ListView(children: [
+        Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -121,14 +123,35 @@ class _MenyuState extends State<Menyu> {
                   ),
                 );
               },
-              child: subjectquiz(name: "English tili", img: "image/english.png"),
+              child:
+                  subjectquiz(name: "English tili", img: "image/english.png"),
             ),
-            subjectquiz(name: "Ona tili", img: "image/onatili.png"),
-            subjectquiz(name: "Biologiya", img: "image/bilology.png"),
+            InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          QuizPage(quizList: onatili, quizName: "Ona tili"),
+                    ),
+                  );
+                },
+                child: subjectquiz(name: "Ona tili", img: "image/onatili.png")),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        QuizPage(quizList: biologyTest, quizName: "Biologiya"),
+                  ),
+                );
+              },
+              child: subjectquiz(name: "Biologiya", img: "image/bilology.png"),
+            ),
           ]),
         ),
-          ]
-      ),
+      ]),
     );
   }
 

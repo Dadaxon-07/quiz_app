@@ -1,4 +1,4 @@
-# quiz_app
+<h1>Subject Quiz <h1/>
 <h2>Intro page</h2>
 
 ![image](https://github.com/user-attachments/assets/388b9845-dfcc-4190-8f16-1e8e174edb65)

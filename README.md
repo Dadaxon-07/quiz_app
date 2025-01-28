@@ -2,7 +2,7 @@
 <h2>Intro page</h2>
 
 ![image](https://github.com/user-attachments/assets/8b8a7686-65a0-4caa-99ba-97d0ff153cf6)
-![image](https://github.com/user-attachments/assets/f3e6c709-ea9f-41ac-9aff-a7f271e95eda)
+![image](https://github.com/user-attachments/assets/caa7b47e-40c2-4bdf-b97b-ce9d8d4ca780)
 ![image](https://github.com/user-attachments/assets/edf8cb2e-6cb0-45fd-bcd5-9fe49cf6a884)
 
 

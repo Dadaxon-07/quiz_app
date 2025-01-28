@@ -1,13 +1,6 @@
 <h1>Subject Quiz <h1/>
 <h2>Intro page</h2>
 
-<p align="center">
-  <img src="![image](https://github.com/user-attachments/assets/288a6319-f599-4fd5-b101-177d3ecd82d9)" width="30%">
-  <img src="https://raw.githubusercontent.com/user/repo/main/assets/image2.png" width="30%">
-  <img src="https://raw.githubusercontent.com/user/repo/main/assets/image3.png" width="30%">
-</p>
-
-
 ![image](https://github.com/user-attachments/assets/388b9845-dfcc-4190-8f16-1e8e174edb65)
 ![image](https://github.com/user-attachments/assets/f3e6c709-ea9f-41ac-9aff-a7f271e95eda)
 ![image](https://github.com/user-attachments/assets/edf8cb2e-6cb0-45fd-bcd5-9fe49cf6a884)

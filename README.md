@@ -1,5 +1,10 @@
 <h1>Subject Quiz <h1/>
 <h2>Intro page</h2>
+## Test Run Screen
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/user/repo/main/assets/image.png" width="30%">
+</p>
 
 ![image](https://github.com/user-attachments/assets/388b9845-dfcc-4190-8f16-1e8e174edb65)
 ![image](https://github.com/user-attachments/assets/f3e6c709-ea9f-41ac-9aff-a7f271e95eda)
